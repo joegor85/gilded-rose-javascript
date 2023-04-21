@@ -20,7 +20,7 @@ export class BaseItem extends Item {
       this.quality--;
       this.sellIn--;
     } else if (this.sellIn < 0) {
-      this.quality - 2;
+      this.quality -= 2;
       this.sellIn--;
     }
   }
@@ -40,7 +40,7 @@ export class Aged_Brie extends Item {
         this.quality++;
         this.sellIn--;
       } else if (this.sellIn < 0) {
-        this.quality + 2;
+        this.quality += 2;
         this.sellIn--;
       }
     } else {
@@ -73,13 +73,11 @@ export class Backstage extends Item {
     if (this.sellIn > 10) {
       this.quality++;
       this.sellIn--;
-    }
-    if(this.sellIn > 5 && this.sellIn <= 10) {
-      this.quality + 2;
+    } else if (this.sellIn > 5 && this.sellIn <= 10) {
+      this.quality += 2;
       this.sellIn--;
-    }
-    if(this.sellIn > 0 && this.sellIn <= 5) {
-      this.quality + 3;
+    } else if (this.sellIn > 0 && this.sellIn <= 5) {
+      this.quality += 3;
       this.sellIn--;
     } else {
       this.quality = 0;
@@ -97,15 +95,15 @@ export class ConjuredCake extends Item {
   //some function
   updateQuality() {
     if (this.sellIn > 0) {
-      this.quality - 2;
+      this.quality -= 2;
       this.sellIn--;
     } else if (this.sellIn < 0) {
-      this.quality - 4;
+      this.quality -= 4;
       this.sellIn--;
     }
   }
 }
-items.push(new Item("Conjured Mana Cake", 3, 6));
+items.push(new ConjuredCake("Conjured Mana Cake", 3, 6));
 
 // console.log(items);
 // console.log(items[0]);

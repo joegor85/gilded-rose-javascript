@@ -1,6 +1,7 @@
 import { expect, describe, it } from "vitest";
 // import { Item, items, updateQuality } from "./gilded-rose.js";
 import { Item, items, BaseItem, Aged_Brie, Sulfuras, Backstage, ConjuredCake } from "./gilded-rose.js";
+//console.log(items);
 
 // describe("updateQuality", () => {
 //   it("reduces quality and sellIn of basic items by 1", () => {
@@ -15,22 +16,23 @@ import { Item, items, BaseItem, Aged_Brie, Sulfuras, Backstage, ConjuredCake } f
 // });
 
 //-------------------------Dexterity Vest-----------------------------------//
-describe("DexterityVestQuality", () => {
-  it("reduces quality and sellIn of +5 Dexterity Vest by 1", () => {
-    const testItem = items[0]; //+5 Dexterity Vest
-    // items.push(testItem);
+// describe("DexterityVestQuality", () => {
+//   it("reduces quality and sellIn of +5 Dexterity Vest by 1", () => {
+//     const testItem = items[0]; //+5 Dexterity Vest
+//     // items.push(testItem);
 
-    testItem.updateQuality();
+//     testItem.updateQuality();
 
-    expect(testItem.sellIn).toBe(9);
-    expect(testItem.quality).toBe(19);
-  });
-});
+//     expect(testItem.sellIn).toBe(9);
+//     expect(testItem.quality).toBe(19);
+//   });
+// });
 
 //--------------------------------Aged Brie------------------------------//
+
 // describe("BrieQuality", () => {
 //   it("reduces sellIn of Aged Brie by 1 and increases quality of Aged Brie by 1", () => {
-//     const testItem = items[1]; //Aged Brie
+//     const testItem = items[2]; //Aged Brie
 //     // items.push(testItem);
 
 //     testItem.updateQuality();
@@ -40,23 +42,25 @@ describe("DexterityVestQuality", () => {
 //   });
 // });
 
-// describe("BrieQuality", () => {
-//   it("reduces sellIn of Aged Brie by 1 and increases quality of Aged Brie by 1", () => {
-//     const testItem = items[1]; //Aged Brie
-//     // items.push(testItem);
+//////------------This DOES NOT WORK-------------//////
+describe("BrieQuality2", () => {
+  it("reduces sellIn of Aged Brie by 3 and increases quality of Aged Brie by 3", () => {
+    const testItem = items[2]; //Aged Brie
+    // items.push(testItem);
 
-//     testItem.updateQuality();
-//     testItem.updateQuality();
-//     testItem.updateQuality();
+    testItem.updateQuality();
+    testItem.updateQuality();
+    testItem.updateQuality();
 
-//     expect(testItem.sellIn).toBe(-1);
-//     expect(testItem.quality).toBe(4);
-//   });
-// });
+    expect(testItem.sellIn).toBe(-1);
+    expect(testItem.quality).toBe(4);
+  });
+});
 
-// describe("BrieQuality", () => {
-//   it("reduces sellIn of Aged Brie by 1 and increases quality of Aged Brie by 1", () => {
-//     const testItem = items[1]; //Aged Brie
+////////This DOES NOT WORK either////////////////////
+// describe("BrieQuality3", () => {
+//   it("reduces sellIn of Aged Brie by 52 and increases quality of Aged Brie to only 50", () => {
+//     const testItem = items[2]; //Aged Brie
 //     // items.push(testItem);
 //     for (let i = 0; i < 52; i++) {
 //       testItem.updateQuality();
@@ -70,7 +74,7 @@ describe("DexterityVestQuality", () => {
 //---------------------------------Elixir----------------------------//
 // describe("ElixirQuality", () => {
 //   it("reduces quality and sellIn of Elixir of the Mongoose by 1", () => {
-//     const testItem = items[2]; //Elixir of the Mongoose
+//     const testItem = items[1]; //Elixir of the Mongoose
 //     // items.push(testItem);
 
 //     testItem.updateQuality();
@@ -94,7 +98,7 @@ describe("DexterityVestQuality", () => {
 // });
 
 //----------------------------------Backstage passes----------------------------//
-// describe("BackstagePassesQuality1, () => {
+// describe("BackstagePassesQuality1", () => {
 //   it("Backstage passes to a TAFKAL80ETC concert: increases quality by 1 (as long as sellIn is above 10) and decreases sellIn by 1", () => {
 //     const testItem = items[4]; //Backstage passes to a TAFKAL80ETC concert
 //     // items.push(testItem);
@@ -174,14 +178,15 @@ describe("DexterityVestQuality", () => {
 // });
 
 //-----------------------------------Conjured Mana Cake--------------------------//
+//console.log(items[5]);
 // describe("ManaCakeQuality", () => {
-//   it("reduces quality and sellIn of Conjured Mana Cake by 2", () => {
+//   it("reduces sellin by 1 and quality of Conjured Mana Cake by 2", () => {
 //     const testItem = items[5]; //Conjured Mana Cake
 //     // items.push(testItem);
 
 //     testItem.updateQuality();
 
-//     expect(testItem.sellIn).toBe(1);
+//     expect(testItem.sellIn).toBe(2);
 //     expect(testItem.quality).toBe(4);
 //   });
 // });
