@@ -16,12 +16,18 @@ export class BaseItem extends Item {
   }
 
   updateQuality() {
-    if (this.sellIn > 0) {
+    if (this.quality <= 0) {
+      this.sellIn--;
+      this.quality = 0;
+    } else if (this.sellIn >= 0) {
+      this.sellIn--;
       this.quality--;
+    } else if (this.sellIn < 0 && this.quality > 1) {
       this.sellIn--;
-    } else if (this.sellIn < 0) {
       this.quality -= 2;
+    } else if (this.sellIn < 0 && this.quality <= 1) {
       this.sellIn--;
+      this.quality = 0;
     }
   }
 }
@@ -36,15 +42,16 @@ export class Aged_Brie extends Item {
   //some function
   updateQuality() {
     if (this.quality < 50) {
-      if (this.sellIn > 0) {
+      if (this.sellIn >= 0) {
+        this.sellIn--;
         this.quality++;
-        this.sellIn--;
       } else if (this.sellIn < 0) {
-        this.quality += 2;
         this.sellIn--;
+        this.quality += 2;
       }
     } else {
       this.sellIn--;
+      this.quality = 50;
     }
   }
 }
@@ -71,17 +78,17 @@ export class Backstage extends Item {
   //some function
   updateQuality() {
     if (this.sellIn > 10) {
+      this.sellIn--;
       this.quality++;
-      this.sellIn--;
     } else if (this.sellIn > 5 && this.sellIn <= 10) {
+      this.sellIn--;
       this.quality += 2;
-      this.sellIn--;
     } else if (this.sellIn > 0 && this.sellIn <= 5) {
+      this.sellIn--;
       this.quality += 3;
-      this.sellIn--;
     } else {
-      this.quality = 0;
       this.sellIn--;
+      this.quality = 0;
     }
   }
 }
@@ -94,12 +101,15 @@ export class ConjuredCake extends Item {
   }
   //some function
   updateQuality() {
-    if (this.sellIn > 0) {
+    if (this.sellIn >= 0) {
+      this.sellIn--;
       this.quality -= 2;
-      this.sellIn--;
     } else if (this.sellIn < 0) {
-      this.quality -= 4;
       this.sellIn--;
+      this.quality -= 4;
+    }
+    if (this.quality < 0) {
+      this.quality = 0;
     }
   }
 }
