@@ -10,6 +10,7 @@ import {
   ConjuredCake,
 } from "./gilded-rose.js";
 //console.log(items);
+//---------TESTS ARE ALL COMMENTED OUT, JUST UNCOMMENT ONE AND RUN-------//
 
 // describe("updateQuality", () => {
 //   it("reduces quality and sellIn of basic items by 1", () => {
@@ -278,17 +279,17 @@ import {
 //   });
 // });
 
-describe("ManaCakeQuality", () => {
-  it("reduces sellin by 4 and quality of Conjured Mana Cake to only 0", () => {
-    const testItem = items[5]; //Conjured Mana Cake
-    // items.push(testItem);
+// describe("ManaCakeQuality", () => {
+//   it("reduces sellin by 4 and quality of Conjured Mana Cake to only 0", () => {
+//     const testItem = items[5]; //Conjured Mana Cake
+//     // items.push(testItem);
 
-    testItem.updateQuality();
-    testItem.updateQuality();
-    testItem.updateQuality();
-    testItem.updateQuality();
+//     testItem.updateQuality();
+//     testItem.updateQuality();
+//     testItem.updateQuality();
+//     testItem.updateQuality();
 
-    expect(testItem.sellIn).toBe(-1);
-    expect(testItem.quality).toBe(0);
-  });
-});
+//     expect(testItem.sellIn).toBe(-1);
+//     expect(testItem.quality).toBe(0);
+//   });
+// });
